@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Form Example</title>
+    <style>
+        .center-align {
+            text-align: center;
+        }
+
+        body {
+            background-color: rgb(116, 105, 105);
+            color: white;
+            margin: 0;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            height: 47px;
+            border: none;
+        }
+
+        button[name="submitButton"] {
+            background-color: blue;
+            border: none;
+            color: white;
+            height: 45px;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        .form {
+            width: 100%;
+            max-width: 400px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <a href="keys" style="color:white;">Keys</a>
+        </header>
+        <h1 class="u-align-center u-text u-text-default u-block-control u-block-0f42-3 center-align"
+            style="margin-bottom: 0; margin-right: auto; margin-left: auto" data-block="354" data-block-type="Text">
+            Dall-e and Twitter API combination
+        </h1>
+        <form class="form" action="/" method="POST">
+            <label for="inputValue">Your Prompt:</label><br>
+            <input type="text" id="inputValue" name="inputValue" placeholder="Prompt" required>
+            <button type="submit" name="submitButton">OpenAI request</button>
+        </form>
+    </div>
+</body>
+</html>

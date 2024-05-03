@@ -1,0 +1,35 @@
+# Python Version: 3.10.9
+# Pip Version: 22.3.1
+# Tweepy version: 4.14.0
+# Openai version: 0.28.0
+# Flask version: 2.3.3
+# ConfigParser version: 6.0.0
+# Requests version: 2.31.0
+
+# client.create_tweet(text="Tweet test") free tier user can create tweets
+# client.create_tweet(in_reply_to_tweet_id=1698048111271100821,text="in reply to tweet id test") free tier user can use in reply to tweet id
+# client.like(1698048111271100821) free tier users can't like tweets
+# client.retweet(1698048111271100821) free tier users can't like tweets
+#for tweet in api.home_timeline():print(tweet.text) free tier users can't like tweets
+#person = client.get_user(username = "DoanAliAN2").data.id free tier users can't get user ids
+#client.get_users_tweets(1698048111271100821): free tier users can't get users tweets
+"""
+#not able to use this streaming with free tier too
+class stream(tweepy.StreamingClient):
+    def on_tweet(self,tweet):
+        print(tweet.text)
+
+stream = stream(bearer_token=bearer_token)
+rule = tweepy.StreamRule("#Python")
+stream.add_rules(rule,dry_run=True)
+stream.filter()
+"""
+#users = client.get_me() free tier users can use this method to get user information about their self
+#client.get_me()[0].id another usage
+
+
+openai.error.InvalidRequestError: Billing hard limit has been reached # this means that if your account is free then your credit usage time limit is exceed and you need to buy credits
+#one way to solve is open another account
+#or just pay the price
+
+

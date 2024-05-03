@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Form Submission Result</title>
+    <style>
+        body {
+            background-color: rgb(116, 105, 105);
+            color: white;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        #twitterButton {
+            background-color: blue;
+            border: none;
+            color: white;
+            height: 45px;
+            width: 150px;
+            margin: 10px 0;
+        }
+
+        .flaskdata {
+            text-align: center;
+        }
+
+        .flaskdata img {
+            max-width: 100%;
+            max-height: 300px;
+        }
+    </style>
+    <script>
+        function handleFormSubmit() {
+            var button = document.getElementById("twitterButton");
+            button.innerHTML = "Tweeting...";  // Update the button text to show the progress
+
+            // Optionally, you can disable the button to prevent multiple clicks
+            button.disabled = true;
+        }
+    </script>
+</head>
+
+<body>
+    <form action="{{ url_for('tweet') }}" method="POST" onsubmit="handleFormSubmit()">
+        <button type="submit" id="twitterButton" name="twitterButton">Post to Twitter</button>
+    </form>
+    <div class="flaskdata">
+        {% if data %}
+        <img src="{{ data }}" alt="Image from OpenAI">
+        {% else %}
+        <img src="../static/images/0fd3416c.jpeg" alt="Image not found">
+        {% endif %}
+    </div>
+</body>
+
+</html>

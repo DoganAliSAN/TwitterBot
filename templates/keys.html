@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>API Key Display and Update</title>
+    <style>
+        body {
+            background-color: rgb(116, 105, 105);
+            color: white;
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        h1 {
+            text-align: center;
+            padding: 20px;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        label {
+            font-size: 18px;
+            margin-top: 10px;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            height: 45px;
+            border: none;
+            font-size: 16px;
+            padding: 5px;
+            margin: 5px 0;
+            background-color: rgba(255, 255, 255, 0.1);
+            color: white;
+        }
+
+        p {
+            font-size: 16px;
+            margin-top: 5px;
+        }
+
+        button[type="submit"] {
+            background-color: blue;
+            border: none;
+            color: white;
+            height: 45px;
+            font-size: 18px;
+            margin-top: 10px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>API Keys</h1>
+    <form method="POST" action="/update_keys">
+        <label for="openai_key">OpenAI Key:</label>
+        <input type="text" name="openai_key" id="openai_key" value="{{ data['openai_key'] }}">
+        <p>Current Value: {{ data['openai_key'] }}</p>
+
+        <label for="bearer_token">Bearer Key:</label>
+        <input type="text" name="bearer_token" id="bearer_token" value="{{ data['bearer_token'] }}">
+        <p>Current Value: {{ data['bearer_token'] }}</p>
+
+        <label for="consumer_key">Consumer Key:</label>
+        <input type="text" name="consumer_key" id="consumer_key" value="{{ data['consumer_key'] }}">
+        <p>Current Value: {{ data['consumer_key'] }}</p>
+
+        <label for="consumer_secret">Consumer Secret:</label>
+        <input type="text" name="consumer_secret" id="consumer_secret" value="{{ data['consumer_secret'] }}">
+        <p>Current Value: {{ data['consumer_secret'] }}</p>
+
+        <label for="access_token">Access Token:</label>
+        <input type="text" name="access_token" id="access_token" value="{{ data['access_token'] }}">
+        <p>Current Value: {{ data['access_token'] }}</p>
+
+        <label for="access_token_secret">Access Token Secret:</label>
+        <input type="text" name="access_token_secret" id="access_token_secret" value="{{ data['access_token_secret'] }}">
+        <p>Current Value: {{ data['access_token_secret'] }}</p>
+
+        <button type="submit">Update Keys</button>
+    </form>
+</body>
+
+</html>
